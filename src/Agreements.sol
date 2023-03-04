@@ -5,7 +5,9 @@ import { GuestHub } from "./GuestHub.sol";
 import { OwnerHub } from "./OwnerHub.sol";
 
 contract Agreements {
-    mapping(uint256 => Stay[]) public staysByPropertyID;
+    OwnerHub public ownerHub = new OwnerHub();
+    GuestHub public guestHub = new GuestHub();
+    Stay[][] public staysByPropertyID;
 
     struct Stay {
         GuestHub.Guest[] guests;
