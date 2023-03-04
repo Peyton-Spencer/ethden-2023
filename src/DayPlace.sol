@@ -21,9 +21,7 @@ contract DayPlace is ERC1155 {
     uint128 public propertyTokenNftIndex = 1;
 
     struct Property {
-        // 160 + 64 + 32 bits
-        // 160 bits for owner address, 96 bits property ID
-        uint256 packedOwnerId;
+        address owner;
         RatePeriod period;
         uint256 ratePerPeriod;
         uint256 securityDeposit;
@@ -49,4 +47,7 @@ contract DayPlace is ERC1155 {
         _mint(msg.sender, PROPERTY_TOKEN_NFT + propertyTokenNftIndex, 1, data);
         propertyTokenNftIndex++;
     }
-}
+
+    // function _ownerOf(uint256 propertyTokenID) {
+    //     balanceOf(mgs.sender, propertyTokenID);
+    // }}
