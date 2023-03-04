@@ -49,5 +49,6 @@ contract DayPlace is ERC1155 {
     }
 
     // function _ownerOf(uint256 propertyTokenID) {
-    //     balanceOf(mgs.sender, propertyTokenID);
-    // }}
+    //     balanceOf(msg.sender, propertyTokenID);
+    // }
+}
