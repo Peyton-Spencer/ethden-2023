@@ -6,6 +6,7 @@ import "../src/DayPlace.sol";
 
 /// @dev See the Solidity Scripting tutorial: https://book.getfoundry.sh/tutorials/solidity-scripting
 contract DeployFoo is Script {
+    address internal deployer;
     DayPlace internal dayMarketplace;
 
     function setUp() public virtual {
@@ -14,8 +15,9 @@ contract DeployFoo is Script {
     }
 
     function run() public {
+        string memory url = "test_url";
         vm.startBroadcast(deployer);
-        dayMarketplace = new DayPlace();
+        dayMarketplace = new DayPlace(url);
         vm.stopBroadcast();
     }
 }
