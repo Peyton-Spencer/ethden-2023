@@ -10,4 +10,10 @@ contract PassFactoryTest is PRBTest, StdCheats {
     DayPlace internal marketplace = new DayPlace(vm.envString("URI"));
 
     // function setUp() public { }
+
+    function testURI() external {
+        string memory uri = vm.envString("URI");
+        console2.log(uri);
+        assertEq(marketplace.uri(1), uri);
+    }
 }

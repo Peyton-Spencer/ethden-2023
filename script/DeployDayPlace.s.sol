@@ -15,9 +15,8 @@ contract DeployFoo is Script {
     }
 
     function run() public {
-        string memory url = "test_url";
         vm.startBroadcast(deployer);
-        dayMarketplace = new DayPlace(url);
+        dayMarketplace = new DayPlace(vm.envString("URI"));
         vm.stopBroadcast();
     }
 }
